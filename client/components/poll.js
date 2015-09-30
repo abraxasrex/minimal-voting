@@ -10,16 +10,17 @@ Template.poll.events({
     // get the parent (poll) id
     var pollID = $(event.currentTarget).parent('.poll').data('id');
     var voteID = $(event.currentTarget).data('id');
-	var thisVoter=Meteor.userId();
+	//var thisVoter=Meteor.userId();
+	
     // create the incrementing object so we can add to the corresponding vote
     var voteString = 'choices.' + voteID + '.votes';
     var action = {};
     action[voteString] = 1;
 	
-	var newVote={
-		voter: thisVoter,
-		voted: pollID
-	}
+	//var newVote={
+	//	voter: thisVoter,
+	//	voted: pollID
+	//}
     
     // increment the number of votes for this choice
 	
@@ -28,6 +29,6 @@ Template.poll.events({
       { $inc: action }
      )
 	 
-	Votes.insert(newVote);
+	//Votes.insert(newVote);
   }
 });

@@ -5,7 +5,7 @@ Template.pollForm.events({
     
     // stop the form from submitting
     event.preventDefault();
-    var currentUserId= Meteor.userId();
+   // var currentUserId= Meteor.userId();
     // get the data we need from the form
     var newPoll = {
 		createdBy: currentUserId,
@@ -14,8 +14,8 @@ Template.pollForm.events({
         {  text: event.target.choice1.value, votes: 0 },
         {  text: event.target.choice2.value, votes: 0 },
         {  text: event.target.choice3.value, votes: 0 }
-      ],
-	  voters:[]
+      ]
+	 // voters:[]
     };    
      
     // create the new poll

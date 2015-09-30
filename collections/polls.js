@@ -2,6 +2,7 @@ Polls = new Mongo.Collection('polls');
 
 
 Polls.allow({
+	
 	insert: function (userId) {
     return userId;
   },
