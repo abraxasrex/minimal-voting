@@ -1,4 +1,5 @@
-Template.body.helpers({
+
+Template.Main.helpers({
   
   polls: function() {
     return Polls.find();
@@ -14,3 +15,16 @@ UI.registerHelper('indexedArray', function(context, options) {
     });
   }
 });
+
+Template.Main.events({
+	'click button.go-home':function(){
+		FlowRouter.go('home');
+	}
+});
+
+Template.Main.events({
+	'click button.go-to-mine':function(){
+		FlowRouter.go('polls');
+	}
+});
+

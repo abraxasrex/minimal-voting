@@ -1,8 +1,6 @@
 Meteor.startup(function() {
-
   // if there are no polls available
   if (Polls.find().count() === 0) {
-
     // create sample polls
     var samplePolls = [
       {
