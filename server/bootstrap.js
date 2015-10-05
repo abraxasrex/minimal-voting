@@ -3,7 +3,7 @@ Meteor.startup(function() {
   if (Polls.find().count() === 0) {
     
     var samplePolls = [
-      {
+      { createdBy: 'taco',
         question: 'Which pet is better?',
         choices: [
           { text: 'parakeet', votes: 0 },
@@ -11,7 +11,7 @@ Meteor.startup(function() {
           { text: 'doge', votes: 0 }
         ]
       },
-	  {
+	  {   createdBy: 'taco',
 		  question:'Who\'s you favorite X-men character?',
 		  choices: [
 		  {text: 'Wolverine', votes:0},
@@ -20,17 +20,8 @@ Meteor.startup(function() {
 		  {text: 'Storm', votes:0},
 			  {text: 'Magneto', votes:0}
 		  ]
-	  },
-      {
-        question: 'Does this app function correctly for you?',
-        choices: [
-          { text: 'Yes', votes: 0 },
-          { text: 'No, I can\'t vote!', votes: 0 },
-          { text: 'No, I can\'t make a new poll!', votes: 0 },
-		{text: 'No, the display is all messed up!', votes:0},
-		{text: 'No, I have a different problem', votes: 0}
-        ]
-      }
+	  }
+    
     ];
 
     // loop over each sample poll and insert into database

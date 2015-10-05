@@ -48,6 +48,7 @@ Template.poll.helpers({
 	},
 	
 	owner: function(){
+	
 		return this.createdBy== Meteor.userId();
 	},
 	
