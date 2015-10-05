@@ -1,22 +1,34 @@
 Meteor.startup(function() {
-  // if there are no polls available
+  
   if (Polls.find().count() === 0) {
-    // create sample polls
+    
     var samplePolls = [
       {
-        question: 'Is Meteor awesome?',
+        question: 'Which pet is better?',
         choices: [
-          { text: 'Of course!', votes: 0 },
-          { text: 'Eh', votes: 0 },
-          { text: 'No. I like plain JS', votes: 0 }
+          { text: 'parakeet', votes: 0 },
+          { text: 'dog', votes: 0 },
+          { text: 'doge', votes: 0 }
         ]
       },
+	  {
+		  question:'Who\'s you favorite X-men character?',
+		  choices: [
+		  {text: 'Wolverine', votes:0},
+		{text: 'Cyclops', votes:0},
+			{text: 'Mystique', votes:0},
+		  {text: 'Storm', votes:0},
+			  {text: 'Magneto', votes:0}
+		  ]
+	  },
       {
-        question: 'Is CSS3 Flexbox the greatest thing since array_slice(bread)?',
+        question: 'Does this app function correctly for you?',
         choices: [
-          { text: '100% yes', votes: 0 },
-          { text: '200% yes', votes: 0 },
-          { text: '300% yes', votes: 0 }
+          { text: 'Yes', votes: 0 },
+          { text: 'No, I can\'t vote!', votes: 0 },
+          { text: 'No, I can\'t make a new poll!', votes: 0 },
+		{text: 'No, the display is all messed up!', votes:0},
+		{text: 'No, I have a different problem', votes: 0}
         ]
       }
     ];

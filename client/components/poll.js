@@ -10,10 +10,10 @@ Template.poll.events({
     event.preventDefault();
   
     // get the parent (poll) id
-    var pollID = $(event.currentTarget).parent('.poll').data('id');
+    var pollID = $(event.currentTarget).parent('.well').data('id');
     var voteID = $(event.currentTarget).data('id');
 	var thisVoter = Meteor.userId();
-	var thisChoice= $(event.currentTarget).child('.text').value;
+	var thisChoice= $(event.currentTarget).children('.text').text();
     var voteString = 'choices.' + voteID + '.votes';
     var action = {};
     action[voteString] = 1;
@@ -42,13 +42,20 @@ Template.poll.helpers({
 	myChoice: function(){
 		var thisVoter= Meteor.userId();
 		if(Votes.find({voter: thisVoter, poll: this._id}).count()>0){
-			return Votes.findOne().voter.text;
+			return Votes.findOne({voter: thisVoter, poll: this._id}).choice;
 		}
 			
 	},
 	
 	owner: function(){
 		return this.createdBy== Meteor.userId();
+	},
+	
+	hasVoted:function(){
+		var thisVoter= Meteor.userId();
+		if(Votes.find({voter: thisVoter, poll: this._id}).count()>0){
+			return true;
+		}
 	}
 	
 })

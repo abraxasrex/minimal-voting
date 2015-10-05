@@ -4,3 +4,15 @@ text-align:center;
 .delete{
  text-align:center;
 }
+h3{
+font-family:'Bitter';
+font-weight:bold;
+}
+a span{
+font-family:'Arimo';
+}
+.text{
+ font-size:15px;
+}
+.well{
+}

@@ -1,39 +1,41 @@
 <template name="Main">
 <body>
-
-    <div class="page-header text-center">
-        <h1>Minimal Polls</h1>
-        <p>Make polls. Vote. Repeat.</p>
+ <div class="row info"><h4>Jonathan Reasor 2015. Inspired by <a href="https://github.com/scotch-io/meteor-polling">scotch.io </a></h4></div>
+    
+	<div class="page-header text-center">
+        <h1> Minimal Polls <span class="glyphicon glyphicon-list-alt"></span><span class="glyphicon glyphicon-ok"></span></h1>
+        <p>Make polls. Vote. Share your questions with your friends.</p>
         {{> loginButtons}}
    </div>
    
-
     <!-- PULL IN THE POLL CREATION FORM -->
 	{{#if currentUser}}
     <div class="container">
         <div class="row">
-		<h3>Make a New Poll</h3>
+		
             <div class="col-md-6 col-md-offset-3">
                 {{ >pollForm }}
             </div>
         </div>
     </div>
-	{{/if}}
+	
 	<h3>View:</h3>
 	<div class="navbar navbar-default col-md-12">
 		<button class="btn btn-default go-home"><a href="{{pathFor '/' }}">All Polls</a></button>
-		{{#if currentUser}}
-		<button class="btn btn-default go-to-mine"><a href="{{pathFor '/mypolls' }}">My Polls</a></button>
-		{{/if}}
+		
+		<button class="btn btn-default go-to-mine">My Polls</button>
+		
 		
 	</div>
-    
+    {{/if}}
     <!-- LOOP OVER POLLS AND SHOW EACH -->
-    <div class="polls col-md-12">
+    <div class="polls col-md-11">
         {{ #each polls}}
+		<div class="col-md-1"></div>
             {{ >poll }}
+			
         {{ /each}}
     </div>
-    
+    <div class="row foot"></div>
 </body>
 </template>

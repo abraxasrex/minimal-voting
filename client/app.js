@@ -24,7 +24,7 @@ Template.Main.events({
 
 Template.Main.events({
 	'click button.go-to-mine':function(){
-		FlowRouter.go('/mypolls');
+		FlowRouter.go('/mypolls/:ID', {ID: Meteor.userId()});
 	}
 });
 

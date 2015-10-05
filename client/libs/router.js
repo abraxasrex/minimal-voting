@@ -15,10 +15,10 @@ FlowRouter.route('/', {
   }
 });
 
-FlowRouter.route('/mypolls', {
+FlowRouter.route('/mypolls/:ID', {
   name:'mypolls',
-  subscriptions: function() {
-  this.register('myPollsView', Meteor.subscribe('myPollsView'));
+  subscriptions: function(params) {
+  this.register('myPollsView', Meteor.subscribe('myPollsView', params.ID));
   this.register('Votes', Meteor.subscribe('Votes'));
   },
   action: function() { 

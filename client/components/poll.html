@@ -1,5 +1,6 @@
 <template name="poll">
-<div class="poll well well-lg" data-id="{{ _id }}">
+<link href='https://fonts.googleapis.com/css?family=Arimo|Bitter' rel='stylesheet' type='text/css'>
+<div class="well col-md-5" data-id="{{ _id }}">
     
     <h3 class="text-center">{{ question }}</h3>
      
@@ -11,13 +12,14 @@
         </a>
     {{ /each }}
 	
-	
-	<h5>you voted for {{displayVote}}</h5>
+	{{#if hasVoted}}
+	<h5>you voted for {{myChoice}}</h5>
+	{{/if}}
 	
 	{{#if owner}}
     <div class="btn btn-default delete col-md-4 col-md-offset-8">Delete Poll</div>
     {{/if}}
-    <div>{{ myChoice }}</div>
+ 
 </div>
 
 </template>
