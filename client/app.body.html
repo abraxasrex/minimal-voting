@@ -21,10 +21,11 @@
 	{{/if}}
 	<h3>View:</h3>
 	<div class="navbar navbar-default col-md-12">
-		<button class="btn btn-default go-home"><a href="{{pathFor 'home' }}">All Polls</a></button>
+		<button class="btn btn-default go-home"><a href="{{pathFor '/' }}">All Polls</a></button>
 		{{#if currentUser}}
-		<button class="btn btn-default go-to-mine"><a href="{{pathFor 'polls' }}">Your Polls</a></button>
+		<button class="btn btn-default go-to-mine"><a href="{{pathFor '/mypolls' }}">My Polls</a></button>
 		{{/if}}
+		
 	</div>
     
     <!-- LOOP OVER POLLS AND SHOW EACH -->

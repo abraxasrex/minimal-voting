@@ -7,7 +7,6 @@
 twbs:bootstrap
 accounts-password
 accounts-ui
-kadira:flow-router
 meteorhacks:flow-layout
 arillo:flow-router-helpers
 standard-minifiers
@@ -24,7 +23,7 @@ random
 ejson
 spacebars
 check
-msavin:mongol
 aldeed:autoform
 aldeed:collection2
 dburles:collection-helpers
+kadira:flow-router

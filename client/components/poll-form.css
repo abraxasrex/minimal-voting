@@ -9,3 +9,15 @@
 .question-group label 	{
 	font-size:18px;
 }
+
+.poll-form{
+ display:none;
+  }
+
+ .opener{
+  clear:both;
+  }
+  
+  .btext{
+  display:none;
+  }

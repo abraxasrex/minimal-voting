@@ -1,12 +1,9 @@
 Template.pollForm.events({
 
-  // handle the form submission
   'submit form': function(event) {
-    
-    // stop the form from submitting
     event.preventDefault();
-   // var currentUserId= Meteor.userId();
-    // get the data we need from the form
+    var currentUserId=Meteor.userId();
+  
     var newPoll = {
 		createdBy: currentUserId,
       question: event.target.question.value,
@@ -14,13 +11,29 @@ Template.pollForm.events({
         {  text: event.target.choice1.value, votes: 0 },
         {  text: event.target.choice2.value, votes: 0 },
         {  text: event.target.choice3.value, votes: 0 }
-      ]
-	 // voters:[]
+      ],
+
     };    
      
-    // create the new poll
+   
     Polls.insert(newPoll);
+	////clear field/////
+	event.target.question.value="";
+	event.target.choice1.value="";
+	event.target.choice2.value="";
+	event.target.choice3.value="";
 	
-  }
-
+	/////hide and show////
+     $(".poll-form").slideToggle();
+	 $(".atext").toggle();
+	 $(".btext").toggle();
+  },
+   'click .opener': function(){
+     $(".poll-form").slideToggle();
+	 $(".atext").toggle();
+	 $(".btext").toggle();
+	 
+    }
+  
 });
+

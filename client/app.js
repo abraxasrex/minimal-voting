@@ -18,13 +18,14 @@ UI.registerHelper('indexedArray', function(context, options) {
 
 Template.Main.events({
 	'click button.go-home':function(){
-		FlowRouter.go('home');
+		FlowRouter.go('/');
 	}
 });
 
 Template.Main.events({
 	'click button.go-to-mine':function(){
-		FlowRouter.go('polls');
+		FlowRouter.go('/mypolls');
 	}
 });
+
 
