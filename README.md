@@ -1,2 +1,9 @@
-# meteor-polling
-Code for the scotch.io tutorial by @sevilayha
+
+
+improvements:
+
+-create winner display
+
+-allow re-vote option
+
+-percentage display

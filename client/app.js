@@ -5,6 +5,8 @@ Template.Main.helpers({
     return Polls.find();
   }
   
+ 
+  
 });
 
 UI.registerHelper('indexedArray', function(context, options) {

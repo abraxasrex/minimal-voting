@@ -24,10 +24,7 @@ Template.poll.events({
 		choice: thisChoice
 	}
     
-        if(Votes.find({voter: thisVoter, poll: pollID}).count()>0){
-			return false;
-		}
-		else{
+        if(Votes.find({voter: thisVoter, poll: pollID}).count()===0){
 			Polls.update(
            { _id: pollID }, 
            { $inc: action });
@@ -57,6 +54,10 @@ Template.poll.helpers({
 		if(Votes.find({voter: thisVoter, poll: this._id}).count()>0){
 			return true;
 		}
+	},
+	leader:function(){
+		var thisVoter=Meteor.userId();
+		
 	}
 	
 })

@@ -6,16 +6,19 @@
      
     {{ #each indexedArray choices }}
         <a href="#" class="vote btn btn-primary btn-block" data-id="{{ _index }}">
-		
-            <span class="votes pull-right">{{ votes }}</span>
+		   
+            <span class="votes pull-right"></span>
+			
             <span class="text">{{ text }}</span>
         </a>
     {{ /each }}
 	
 	{{#if hasVoted}}
-	<h5>you voted for {{myChoice}}</h5>
+	<h5>you voted {{myChoice}}</h5>
+	{{#each indexedArray choices}}
+	<h4>{{votes}} people voted {{text}}</h4>
+	{{/each}}
 	{{/if}}
-	
 	{{#if owner}}
     <div class="btn btn-default delete col-md-4 col-md-offset-8">Delete Poll</div>
     {{/if}}
