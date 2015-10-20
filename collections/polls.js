@@ -18,20 +18,3 @@ Polls.allow({
   }
 	
 })
-
-
-//Polls.helpers({
- // totalVotes: function() {
-  //  return Votes.find().count();
-  //},
-
-  //votesForOption: function(option) {
- //   return Votes.find({option: option}).count();
- // },
-
- // percentOfTotal: function(option) {
- //   var totalVotes = this.totalVotes();
-  //  return (this.votesForOption(option) / this.totalVotes()) * 100;
-  //}
-
-//});

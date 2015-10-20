@@ -24,7 +24,7 @@ Template.poll.events({
 		choice: thisChoice
 	}
     
-        if(Votes.find({voter: thisVoter, poll: pollID}).count()===0){
+        if(Meteor.userId() && Votes.find({voter: thisVoter, poll: pollID}).count()===0){
 			Polls.update(
            { _id: pollID }, 
            { $inc: action });
